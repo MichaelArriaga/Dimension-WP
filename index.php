@@ -54,10 +54,10 @@
       </ul>
     </form>
     <ul class="icons">
-      <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-      <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-      <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-      <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+      <li><a href="<?php echo get_theme_mod('twitter_path','http://twitter.com'); ?>" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="<?php echo get_theme_mod('facebook_path','http://facebook.com'); ?>" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+      <li><a href="<?php echo get_theme_mod('instagram_path','http://instagram.com'); ?>" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+      <li><a href="<?php echo get_theme_mod('github_path','http://github.com'); ?>" class="icon fa-github"><span class="label">GitHub</span></a></li>
     </ul>
   </article>
 

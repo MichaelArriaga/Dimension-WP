@@ -130,28 +130,66 @@ add_action('customize_register', 'about_customizer');
 function contact_customizer($wp_customize) {
   global $themeTitle, $sectionNote, $lorem, $markupNote;
   
-  $wp_customize->add_section('about', array(
+  $wp_customize->add_section('contact', array(
     'title' => __('Contact', $themeTitle),
-    'description' => sprintf(__("Options for contact section - {$sectionNote}", $themeTitle)),
-    'priority' => 3
+    'description' => sprintf(__("Options for contact section", $themeTitle)),
+    'priority' => 4
   ));
 
-  // content
-  $wp_customize->add_setting('about_body', array(
-    'default' => $lorem, $themeTitle,
+  // ICON PATHS
+  // twitter
+  $wp_customize->add_setting('twitter_path', array(
+    'default' => 'http://twitter.com', $themeTitle,
     'type' => 'theme_mod'
   ));
 
-  $wp_customize->add_control('about_body', array(
-    'type' => 'textarea',
-    'label' => __('Contact Content', $themeTitle),
-    'section' => 'about',
-    'description' => __( $markupNote ),
+  $wp_customize->add_control('twitter_path', array(
+    'label' => __('Twitter URL', $themeTitle),
+    'section' => 'contact',
     'priority' => 2
   ));
 
+  // facebook
+  $wp_customize->add_setting('facebook_path', array(
+    'default' => 'http://facebook.com', $themeTitle,
+    'type' => 'theme_mod'
+  ));
+
+  $wp_customize->add_control('facebook_path', array(
+    'label' => __('Facebook URL', $themeTitle),
+    'section' => 'contact',
+    'priority' => 2
+  ));
+
+    
+  // isntagram
+  $wp_customize->add_setting('instagram_path', array(
+    'default' => 'http://instagram.com', $themeTitle,
+    'type' => 'theme_mod'
+  ));
+
+  $wp_customize->add_control('instagram_path', array(
+    'label' => __('Instagram URL', $themeTitle),
+    'section' => 'contact',
+    'priority' => 2
+  ));
+
+
+  // github
+  $wp_customize->add_setting('github_path', array(
+    'default' => 'http://github.com', $themeTitle,
+    'type' => 'theme_mod'
+  ));
+
+  $wp_customize->add_control('github_path', array(
+    'label' => __('Github URL', $themeTitle),
+    'section' => 'contact',
+    'priority' => 2
+  ));
+  
+
 }
 
-add_action('customize_register', 'about_customizer');
+add_action('customize_register', 'contact_customizer');
 
 
