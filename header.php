@@ -16,6 +16,19 @@
 
 </head>
 
+  <style>
+  .image:before {
+		background-image: url("<?php echo get_bloginfo('template_url').'/images/overlay.png';?>");
+  }
+  #bg:before {
+    background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("<?php echo get_bloginfo('template_url').'/images/overlay.png';?>");
+  }
+
+  #bg:after {
+		background-image: url("<?php echo get_bloginfo('template_url').'/images/bg.jpg'; ?>");
+  }
+</style>
+
 
 <body class="is-preload <?php body_class(); ?>">
   <!-- Wrapper -->
