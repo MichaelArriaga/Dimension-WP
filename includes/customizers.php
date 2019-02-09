@@ -7,10 +7,10 @@
   $markupNote = 'NOTE: You can add HTML elements here';
 
 
-function intro_customizer($wp_customize) {
+function setup_customizers($wp_customize) {
   global $themeTitle, $sectionNote, $lorem, $markupNote;
 
-  
+  // INTRO SECTION START
   $wp_customize->add_section('intro', array(
     'title' => __('Intro', $themeTitle),
     'description' => sprintf(__("Options for Intro Section - {$sectionNote}", $themeTitle)),
@@ -43,19 +43,15 @@ function intro_customizer($wp_customize) {
       'description' => __( $markupNote ),
       'priority' => 3
     ));
+  // INTRO SECTION END
 
-}
-add_action('customize_register', 'intro_customizer');
-
-
-function work_customizer($wp_customize) {
-  global $themeTitle, $sectionNote, $lorem, $markupNote;
-  
+  // WORK SECTION START
   $wp_customize->add_section('work', array(
     'title' => __('Work', $themeTitle),
     'description' => sprintf(__("Options for work section - {$sectionNote}", $themeTitle)),
     'priority' => 2
   ));
+
   // img
   $wp_customize->add_setting('work_img', array(
     'default' => get_bloginfo('template_directory'). '/images/pic02.jpg',
@@ -82,15 +78,9 @@ function work_customizer($wp_customize) {
     'description' => __( $markupNote ),
     'priority' => 2
   ));
+  // WORK SECTION END
 
-}
-
-add_action('customize_register', 'work_customizer');
-
-
-function about_customizer($wp_customize) {
-  global $themeTitle, $sectionNote, $lorem, $markupNote;
-  
+  // ABOUT SECTION START
   $wp_customize->add_section('about', array(
     'title' => __('About', $themeTitle),
     'description' => sprintf(__("Options for about section - {$sectionNote}", $themeTitle)),
@@ -122,21 +112,16 @@ function about_customizer($wp_customize) {
     'description' => __( $markupNote ),
     'priority' => 2
   ));
+  // ABOUT SECTION END
 
-}
-
-add_action('customize_register', 'about_customizer');
-
-function contact_customizer($wp_customize) {
-  global $themeTitle, $sectionNote, $lorem, $markupNote;
-  
+  // CONTACT SECTION START
   $wp_customize->add_section('contact', array(
     'title' => __('Contact', $themeTitle),
     'description' => sprintf(__("Options for contact section", $themeTitle)),
     'priority' => 4
   ));
 
-  // ICON PATHS
+  // icon urls
   // twitter
   $wp_customize->add_setting('twitter_path', array(
     'default' => 'http://twitter.com', $themeTitle,
@@ -160,9 +145,8 @@ function contact_customizer($wp_customize) {
     'section' => 'contact',
     'priority' => 2
   ));
-
     
-  // isntagram
+  // instagram
   $wp_customize->add_setting('instagram_path', array(
     'default' => 'http://instagram.com', $themeTitle,
     'type' => 'theme_mod'
@@ -173,7 +157,6 @@ function contact_customizer($wp_customize) {
     'section' => 'contact',
     'priority' => 2
   ));
-
 
   // github
   $wp_customize->add_setting('github_path', array(
@@ -186,10 +169,8 @@ function contact_customizer($wp_customize) {
     'section' => 'contact',
     'priority' => 2
   ));
-  
-
+  // CONTACT SECTION END
 }
-
-add_action('customize_register', 'contact_customizer');
+add_action('customize_register', 'setup_customizers');
 
 
