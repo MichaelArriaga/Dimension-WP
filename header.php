@@ -7,7 +7,7 @@
 <html>
 
 <head>
-  <title>Dimension by HTML5 UP</title>
+  <title><?php bloginfo('name');?></title>
   <meta charset="<?php bloginfo('charset'); ?>" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
@@ -28,9 +28,9 @@
       </div>
       <div class="content">
         <div class="inner">
-          <h1>Dimension</h1>
-          <p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
-            for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>
+          <h1><?php bloginfo('name');?></h1>
+          <p><?php bloginfo('description'); ?></p>
+          
         </div>
       </div>
       <nav>
